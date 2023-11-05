@@ -13,4 +13,18 @@ HTML 5.0:                 <font>                    <span>
 
 
 
-ZADANIE
+zadanie 2
+
+ 1.
+ W HTML 4.0 do obsługi multimediów, takich jak audio i wideo, konieczne było korzystanie z wtyczek, takich jak Flash czy QuickTime.
+W HTML 5.0 wprowadzono wbudowane wsparcie dla elementów <audio> i <video>, które umożliwiają osadzanie plików audio i wideo bez użycia wtyczek zewnętrznych. Ponadto, HTML 5.0 obsługuje skalowalną grafikę wektorową (SVG) oraz element <canvas>, który pozwala na dynamiczne rysowanie grafiki bez konieczności użycia wtyczek.
+2. 
+W HTML 4.0 interakcje na stronach internetowych często wymagały użycia języków skryptowych, takich jak JavaScript, ale brakowało standardowych API dla wielu funkcji, takich jak lokalizacja geograficzna czy przechowywanie danych lokalnie, a w HTML 5.0 jest wiele nowych interaktywnych funkcji i API. 
+3.
+ W HTML 4.0 strony internetowe były głównie tworzone przy użyciu elementów takich jak <div>, <span>, <table> itp., które były używane głównie do określania struktury i stylowania za pomocą CSS. W HTML 5.0 wprowadzono wiele nowych semantycznych elementów, takich jak <header>, <footer>, <nav>, <article>, <section>, które pozwalają na bardziej precyzyjne określenie znaczenia poszczególnych części strony. To ułatwia zarówno programistom, jak i robotom wyszukiwarek zrozumienie struktury dokumentu.
+
+zad 3
+HTML 4.0 - https://www.w3.org/TR/html4/
+HTML 4.01 - https://www.w3.org/TR/html401/
+HTML 5.0  - https://dev.w3.org/html5/spec-LC/
+zad 1
