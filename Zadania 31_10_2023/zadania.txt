@@ -1,20 +1,17 @@
-zadanie 1
-
+Karta pracy 
+Zad 1
 Wersja HTML           Element			 Zamiennik        
 HTML 4.0:              <font>			   <span> 			
-HTML 4.0:              <CENTER>		 CSS (np. text-align: center;)  		CSS HTML 4.0:              <strike>		 	    <del> 		
+HTML 4.0:              <CENTER>		 CSS (np. text-align: center;)  		 
+HTML 4.0:              <strike>		 	    <del> 		
 HTML 4.0:              <s>	 	            <del> 		
 HTML 5.0:              <acronym>	       <abbr> I <span>		
 HTML 5.0:             <applet>	                   <canvas>		
 HTML 5.0: 	      <basefont>		    <body>
-HTML 5.0: 	         <big>		            <span>
+HTML 5.0: 	        <big>		            <span>
 HTML 5.0:		<center>         CSS (np. text-align: center;) 
-HTML 5.0:                 <font>                    <span>
-
-
-
+HTML 5.0:               <font>                    <span>
 zadanie 2
-
  1.
  W HTML 4.0 do obsługi multimediów, takich jak audio i wideo, konieczne było korzystanie z wtyczek, takich jak Flash czy QuickTime.
 W HTML 5.0 wprowadzono wbudowane wsparcie dla elementów <audio> i <video>, które umożliwiają osadzanie plików audio i wideo bez użycia wtyczek zewnętrznych. Ponadto, HTML 5.0 obsługuje skalowalną grafikę wektorową (SVG) oraz element <canvas>, który pozwala na dynamiczne rysowanie grafiki bez konieczności użycia wtyczek.
@@ -22,9 +19,27 @@ W HTML 5.0 wprowadzono wbudowane wsparcie dla elementów <audio> i <video>, któ
 W HTML 4.0 interakcje na stronach internetowych często wymagały użycia języków skryptowych, takich jak JavaScript, ale brakowało standardowych API dla wielu funkcji, takich jak lokalizacja geograficzna czy przechowywanie danych lokalnie, a w HTML 5.0 jest wiele nowych interaktywnych funkcji i API. 
 3.
  W HTML 4.0 strony internetowe były głównie tworzone przy użyciu elementów takich jak <div>, <span>, <table> itp., które były używane głównie do określania struktury i stylowania za pomocą CSS. W HTML 5.0 wprowadzono wiele nowych semantycznych elementów, takich jak <header>, <footer>, <nav>, <article>, <section>, które pozwalają na bardziej precyzyjne określenie znaczenia poszczególnych części strony. To ułatwia zarówno programistom, jak i robotom wyszukiwarek zrozumienie struktury dokumentu.
-
 zad 3
 HTML 4.0 - https://www.w3.org/TR/html4/
 HTML 4.01 - https://www.w3.org/TR/html401/
 HTML 5.0  - https://dev.w3.org/html5/spec-LC/
-zad 1
+
+
+Zadanie 1
+Witryna internetowa - zwana też serwisem internetowym, to zbiór stron, adresów URL i podstron, które są powiązane ze sobą i udostępniane w internecie z jednego adresu domenowego. Witryna internetowa zazwyczaj jest zlokalizowana na jednym serwerze i zawiera informacje o różnych tematach. Witryna internetowa jest dostępna za pośrednictwem usługi WWW.
+
+Portal internetowy - witryna internetowa, która zawiera usługi stanowiące „bramę” do Internetu. Portale są zwykle wielotematyczne i oferują dostęp do różnorodnych informacji. Mogą to być portale informacyjne, biznesowe, społecznościowe, rozrywkowe itp. Portale często oferują darmowe usługi, np. pocztę elektroniczną, czy hosting.
+
+Sklep internetowy to serwis internetowy umożliwiający kupowanie i sprzedawanie produktów przez Internet. Jest to jedna z form handlu elektronicznego, która może być realizowana na wiele sposobów. Sklep internetowy jest częścią relacji B2C, rzadziej B2B1. Proces zakupowy realizowany jest najczęściej poprzez dodanie wybranych pozycji do koszyka oraz złożenie zamówienia online.
+
+Blog tekstowy - najpopularniejszy rodzaj bloga, w którym najczęściej wykorzystywanym środkiem przekazu jest tekst. Blogi tekstowe mają pewne cechy typowe dla tradycyjnych dzienników, takie jak: sposób tworzenia narracji, doraźność i referencjalność poruszanych zagadnień, elementy metatekstowe oraz swobodna forma wypowiedzi. Blog to pewien rodzaj strony internetowej składający się z samodzielnych, specyficznych, różnorodnych, odrębnych, oraz uporządkowanych chronologicznie wpisów.
+
+Wideoblog  – rodzaj bloga internetowego, którego zasadniczą treść stanowią pliki filmowe publikowane przez autora w kolejności chronologicznej. Pliki udostępniane są do odtwarzania w technologii video-streamingu lub do pobrania na komputer użytkownika – gościa i widza wideobloga.
+
+Zadanie 2
+Ta Stron to Wortal internetowy. Strona głównie poświęcona jest podręcznikami do szkół i ofertą krztałcenia dla nauczycieli.
+Jak widzimy powyżej ta dziedzina jest poświęcona jednej tematyce.
+Zadanie 3
+</znacznik> tekst </znacznik> Błędna
+<atrybut = "wartość "  > znacznik </atrybut> Poprawna
+
