@@ -43,3 +43,11 @@ Zadanie 3
 </znacznik> tekst </znacznik> Błędna
 <atrybut = "wartość "  > znacznik </atrybut> Poprawna
 
+Test 1
+zda 1
+A
+zad 2 
+D
+zad 3
+C
+
