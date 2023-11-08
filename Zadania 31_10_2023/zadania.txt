@@ -4,7 +4,7 @@ Wersja HTML           Element			 Zamiennik
 HTML 4.0:              <font>			   <span> 			
 HTML 4.0:              <CENTER>		 CSS (np. text-align: center;)  		 
 HTML 4.0:              <strike>		 	    <del> 		
-HTML 4.0:              <s>	 	            <del> 		
+HTML 4.0:              <s>a	  	            <del> 		
 HTML 5.0:              <acronym>	       <abbr> I <span>		
 HTML 5.0:             <applet>	                   <canvas>		
 HTML 5.0: 	      <basefont>		    <body>
