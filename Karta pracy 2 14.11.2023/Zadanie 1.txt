@@ -1,0 +1,28 @@
+Zadanie 1
+
+Strict (nie wolno w niej używać znaczników wycofanych, a bedących standardem w poprzednich wersjach języka HTML)
+Transitional oznaczało, że jest to przejściowa wersja, dopuszczająca stosowanie niektórych wycofanych znaczników z wersji wcześniejszych.
+Wersję Frameset stosowano do stron z ramkami. Pełna lista możliwych deklaracji typu dokumentu (DTD) znajduje sie na stronach W3C Recommended list of DTDs
+
+Zadanie 2
+
+<!DOCTYPE html>
+<html lang ="pl">
+<head> 
+<title> Deklaracja typu dokumentu - DOCTYPE </title> 
+<meta charset = UTF-8> 
+<meta name ="description" content ="Deklaracja typu dokumentu - DOCTYPE"> 
+<meta name ="author" content ="Jan Kowalski">
+<meta name ="robots" content ="index, follow"> 
+<link rel ="stylesheet" type =" text/css " href ="../styl_glowna_5.css">
+</head>
+<body>
+
+</body>
+</html>
+
+zadanie 3
+1.HTML
+2.Przykłady do zadania
+3.UTF-8
+
