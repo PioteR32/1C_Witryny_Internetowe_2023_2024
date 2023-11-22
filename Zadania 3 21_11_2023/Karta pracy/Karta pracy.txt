@@ -1,0 +1,5 @@
+Znacznik
+<ul> = lista znakowa
+<ol> = lista numerowana
+<li> = kolejny punkt listy 
+<title> = tytuł
