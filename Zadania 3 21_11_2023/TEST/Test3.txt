@@ -1,0 +1,10 @@
+Zadanie 1
+A
+zad 2
+<p>
+zad 3
+href
+zad 4
+<center>
+zad 5
+pre
