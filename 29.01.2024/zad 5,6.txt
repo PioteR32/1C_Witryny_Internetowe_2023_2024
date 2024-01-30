@@ -1,0 +1,11 @@
+zaad 5				Zastosowanie		Znacznik
+type = "submit"  		przyciski 		<input>
+
+scrolling = "no/yes/auto"	strona internetowa	<body>
+				scrolowanie
+
+maxlength = "x"			długośc znaków 		<input>
+
+cellspacing			miejsce  komórek	<table>
+
+id = 
