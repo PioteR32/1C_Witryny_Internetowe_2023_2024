@@ -1,0 +1,36 @@
+#kontener{
+    width: 960px;
+    margin: 0 auto;
+    }
+    
+    #naglowek{
+    margin: 10px;
+    width: 936px;
+    height: 200px;
+    border: 2px solid black;
+    }
+    
+    .kolumna{
+    float: left;
+    margin: 10px;
+    width: 296px;
+    height: 350px;
+    border: 2px solid black;
+    }
+    #tresc{
+        float: left;
+        margin: 10px;
+        width: 592px;
+        height: 350px;
+        border: 2px solid black;
+    }
+    #clear{
+    clear: both;
+    }
+    
+    #stopka{
+    margin: 10px;
+    width: 936px;
+    height: 150px;
+    border: 2px solid black;
+    }
