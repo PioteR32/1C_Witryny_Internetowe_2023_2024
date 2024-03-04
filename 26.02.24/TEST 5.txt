@@ -1,0 +1,10 @@
+zad 1
+<marquee>
+zad 2
+<video>
+zad 3
+<map>
+zad 4
+height
+zad 5
+URL pliku
