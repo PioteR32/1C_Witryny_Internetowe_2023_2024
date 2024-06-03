@@ -1,0 +1,17 @@
+.nagłówek{
+    width: auto;
+    height: auto;
+    background-color:aqua;
+    border: solid black;
+    border-width: 10px;
+    margin: 100px;
+    padding :10px
+}
+.prace,.nauka{
+    width: auto;
+    height: auto;
+    background-color:aqua;
+    border: solid black;
+    border-width: 10px;
+  
+}
