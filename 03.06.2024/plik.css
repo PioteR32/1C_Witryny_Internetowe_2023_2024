@@ -1,7 +1,9 @@
 .body{
     background-color: rgb(255, 25, 0);
 }
-
+h4{
+    margin: 10px;
+}
 .nagłówek{
     width: auto;
     height: auto;
