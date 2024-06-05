@@ -1,17 +1,22 @@
+.body{
+    background-color: blue;
+}
+
 .nagłówek{
     width: auto;
     height: auto;
     background-color:aqua;
     border: solid black;
-    border-width: 10px;
+    border-width: 5px;
     margin: 100px;
     padding :10px
 }
 .prace,.nauka{
+    margin: 10px;
     width: auto;
     height: auto;
-    background-color:aqua;
+    background-color:rgb(229, 255, 0);
     border: solid black;
-    border-width: 10px;
+    border-width: 3px;
   
 }
