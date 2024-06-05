@@ -1,5 +1,5 @@
 .body{
-    background-color: blue;
+    background-color: rgb(255, 25, 0);
 }
 
 .nagłówek{
@@ -8,10 +8,10 @@
     background-color:aqua;
     border: solid black;
     border-width: 5px;
-    margin: 100px;
+    margin: 50px;
     padding :10px
 }
-.prace,.nauka{
+.prace,.nauka,.projekty{
     margin: 10px;
     width: auto;
     height: auto;
@@ -19,4 +19,15 @@
     border: solid black;
     border-width: 3px;
   
+}
+.unnumerateList{
+    font-family: Arial, Helvetica, sans-serif;
+    color : black;
+    font-weight: 500;
+}
+.numerateList
+{
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(7, 12, 101);
+    font-weight: 400;
 }
