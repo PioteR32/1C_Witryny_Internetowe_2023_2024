@@ -1,6 +1,10 @@
 .body{
     background-color: rgb(255, 25, 0);
 }
+p{
+    margin-bottom: 3px;
+    margin-top: 3px;
+}
 h4{
     margin: 10px;
 }
@@ -9,9 +13,13 @@ h4{
     height: auto;
     background-color:aqua;
     border: solid black;
+    font-weight: 800;
     border-width: 5px;
     margin: 50px;
     padding :10px
+}
+.nagłówek>p{
+    font-size:xx-large ;
 }
 .prace,.nauka,.projekty{
     margin: 10px;
@@ -20,7 +28,8 @@ h4{
     background-color:rgb(229, 255, 0);
     border: solid black;
     border-width: 3px;
-  
+    font-size: large ;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .unnumerateList{
     font-family: Arial, Helvetica, sans-serif;
