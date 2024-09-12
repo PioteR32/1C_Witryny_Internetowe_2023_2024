@@ -1,0 +1,23 @@
+.body{
+    background-color: rgb(255, 25, 0);
+    color: blue;
+}
+h1{
+    text-align: center;
+}
+.table,.tr,.td{
+    margin: 2px;
+    border-color: black;
+}
+.section1
+{
+    margin: 10px;
+    width: auto;
+    height: auto;
+    color: white;
+    background-color:rgb(40, 44, 8);
+    border: solid black;
+    border-width: 3px;
+    font-size: large ;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
