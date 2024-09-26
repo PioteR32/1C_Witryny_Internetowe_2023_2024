@@ -1,0 +1,15 @@
+ul,li{
+    background-color: black;
+    color:aliceblue;
+}
+a{
+    background-color: black;
+    color:aliceblue;  
+}
+body {
+    background-color: aquamarine;
+}
+:visited
+{
+    color :red;
+}
