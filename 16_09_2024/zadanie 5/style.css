@@ -16,7 +16,7 @@
 .trescStrony
 {
     float:left;
-    width:min-content;
+    width:1680px;
     height:600px;
     text-align: center;
     background-color: #e7d916;
@@ -29,4 +29,5 @@
     height: 200px;
     background-color: #cc9966;
     text-align: center;
+    clear: both;
 }
