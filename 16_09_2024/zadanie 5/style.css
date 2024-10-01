@@ -5,3 +5,28 @@
     background-color: #cc9966;
     text-align: center;
 }
+.menu
+{
+    float: left;
+    width:200px;
+    height:200px;
+    background-color: #000000;
+    color:white;
+}
+.trescStrony
+{
+    float:left;
+    width:min-content;
+    height:600px;
+    text-align: center;
+    background-color: #e7d916;
+    color:rgb(0, 0, 0);
+}
+.stopka
+{
+
+    width: auto;
+    height: 200px;
+    background-color: #cc9966;
+    text-align: center;
+}
