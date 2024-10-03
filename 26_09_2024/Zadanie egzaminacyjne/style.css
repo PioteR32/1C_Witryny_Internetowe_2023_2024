@@ -1,0 +1,10 @@
+
+.text
+{
+    width: auto;
+    image-resolution: 1800,1000;
+    text-align: center;
+    image-rendering: auto;
+    background: url("background.jpg") no-repeat;
+   
+}
