@@ -1,0 +1,1 @@
+algorytm dodaje liczby a później sprawdza czy a jest mniejsze od b i jeślii a jest mniejsze to wyświetla a a w innym przypadku b ;

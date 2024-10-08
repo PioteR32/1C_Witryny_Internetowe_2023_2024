@@ -1,0 +1,10 @@
+Zalety
+1. bezpieczeństwo( jak wstrzykiwanie kodu i kradzież danych)
+2.nie są one zawsze obsługiwane przez stare przeglądarki.
+3.kod skryptu może być łatwo odczytany i zmodyfikowany przez użytkownika, co może prowadzić do potencjalnych problemów zabezpieczeń i nadużyć.
+Wady
+1.nie Wykonywanie skryptów natychmiastowo
+2. nie pozwalają również na interakcję użytkownika z witryną, dzięki czemu strony internetowe stają się bardziej dynamiczne i interaktywne.
+3. obciążają serwer
+4. jest potrzeby przesyłania żądań do serwera za każdym razem, gdy użytkownik interaktywnie działa na stronie. To prowadzi do szybszego ładowania się stron i lepszej wydajności.
+5.Ostatecznie, skrypty po stronie serwera nie  pozwalają na personalizację interfejsu użytkownika. 
