@@ -1,0 +1,11 @@
+.header {
+    height: 200px;
+    overflow-y: scroll;
+  }
+  .main {
+    height: 400px;
+  }
+  .footer {
+    width: 100%;
+    display: fixed;
+  }

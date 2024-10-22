@@ -1,0 +1,22 @@
+.LeftTop
+{
+    background-position-y: top;
+    background-position-x: left;
+
+    background-image: url(kartkówka.jpeg);
+    image-resolution: 100px,100px;
+}
+.centrum
+{
+    background-position-x: center;
+    background-image: url(kartkówka.jpeg);
+    image-resolution: 100px,100px;
+}
+.rightBottom
+{
+    background-position-y: bottom;
+    background-position-x: right;
+
+    background-image: url(kartkówka.jpeg);
+    image-resolution: 100px,100px;
+}
