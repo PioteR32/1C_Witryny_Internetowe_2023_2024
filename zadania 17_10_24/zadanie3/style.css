@@ -1,0 +1,7 @@
+body
+{
+    background-image:url("kartkówka.jpeg");
+    background-size: 100%,50%;
+    background-size:contain;
+    background-size:cover;
+}

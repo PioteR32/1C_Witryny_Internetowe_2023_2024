@@ -1,0 +1,15 @@
+.poziomo
+{
+    background-image: url("kartkówka.jpeg");
+    background-repeat: repeat-x;
+}
+.pionowo
+{
+    background-image: url("kartkówka.jpeg");
+    background-repeat: repeat-y;
+}
+.niePowtarza
+{
+    background-image: url("kartkówka.jpeg");
+    background-repeat: no-repeat;
+}
