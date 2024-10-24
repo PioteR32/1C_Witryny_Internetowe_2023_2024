@@ -1,0 +1,25 @@
+.header
+{
+    background-color: rgba(100,10,0,0,5);
+    background-image: url("doStrony.png");
+    background-attachment: fixed;
+   overflow: hidden;
+   /* background-clip: content-box; */
+}
+.main
+{
+    background-color: rgba(100,10,0,0,5);
+    background-image: url("doStrony.png");
+    background-attachment: scroll;
+   font-size: large;
+   
+   /* background-clip: content-box; */
+}
+.footer
+{
+    background-color: rgba(100,10,0,0,5);
+    background-image: url("doStrony.png");
+    background-attachment: fixed;
+   
+   /* background-clip: content-box; */
+}
