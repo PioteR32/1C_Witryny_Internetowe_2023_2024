@@ -1,0 +1,8 @@
+.background
+{
+    background-color: rgba(100,10,0,0,5);
+    background-image: url("doStrony.png");
+    /* background-blend-mode: multiply; */
+    /* background-blend-mode: screen; */
+    /* background-blend-mode: overlay; */
+}

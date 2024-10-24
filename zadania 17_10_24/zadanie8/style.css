@@ -1,0 +1,11 @@
+.background
+{
+    background-color: rgba(100,10,0,0,5);
+    background-image: url("doStrony.png");
+    margin: auto;
+    border: 10cm;
+    padding: 2cm;
+   background-clip: border-box;
+   background-clip: padding-box;
+   /* background-clip: content-box; */
+}
