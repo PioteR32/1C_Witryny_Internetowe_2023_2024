@@ -7,5 +7,5 @@
   }
   .footer {
     width: 100%;
-    display: fixed;
+    position: fixed;
   }
