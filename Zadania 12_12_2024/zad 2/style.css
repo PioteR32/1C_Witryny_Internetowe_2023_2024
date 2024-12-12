@@ -1,0 +1,11 @@
+.kwadrat
+{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    background-color: black;
+}
+.kwadrat:hover
+{
+    transform: rotate(90deg);
+}
