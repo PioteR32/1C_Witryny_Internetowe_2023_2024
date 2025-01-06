@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href = "style.css"/>
+    <title>Document</title>
+</head>
+<script>
+    var canvas;
+    window.addEventListener("load", function () {
+
+        canvas = document.getElementById('gra');
+        if (!canvas.getContext) { return; }
+        ctxMain = canvas.getContext('2d');
+        width = canvas.width;
+        height = canvas.height;
+
+        canvasBuffer = document.createElement('canvas');
+        canvasBuffer.width = width;
+        canvasBuffer.height = height;
+        ctx = canvas.getContext('2d');
+        startButton = new Button(width/2,height/2,100,100,'red','white',"Start Game",toButtonFnc);
+        LoadResources();
+        document.addEventListener("keydown", KeyDown, false);
+        document.addEventListener("mousemove", Follow, false);
+        document.addEventListener("mousedown", Fire, false);
+    }, false);
+
+    function Follow(e) {
+        tankXTarget = e.clientX;
+    }
+    function KeyDown(e) {
+        if (e.keyCode == 37) {
+            mainTank.X -= 10;
+            dir = 1;
+        }
+        else if (e.keyCode == 39) {
+            mainTank.X += 10;
+            dir = 1;
+        }
+        else if (e.keyCode == 32) {
+            mainTank.Fire();
+        }
+    }
+    
+    // pobierz zasoby
+    function LoadResources() {
+        mountains = loadImg('Images/mountains_blurred.png');
+        hills = loadImg('Images/hills.png');
+        ground = loadImg('Images/ground.png');
+        tank = loadImg('Images/tank.png');
+        cloud1 = loadImg('Images/cloud1.png');
+        cloud2 = loadImg('Images/cloud2.png');
+        sun = loadImg('Images/sun.png');
+        bullet = loadImg('Images/bullet.png');
+        alien = loadImg('Images/alien.png');
+        fire = loadImg('Images/fire.png')
+        badguyRed = loadImg('Images/badguy_red.png')
+        setTimeout(checkLoad, 100);
+        setInterval(DrawGameWorld, 1000 / 120);
+    }
+    function IsColision()
+     {
+        for (var i = 0; i < objects.length; i++) {
+            if (objects[i].ThisObject == Objects.BULLET)
+                for (var j = 0; objects.length > j; j++) {
+                    if (objects[j].ThisObject == objects[i].ToShootObject)
+                        if ((Math.abs(objects[j].X - objects[i].X) < 70) && (Math.abs(objects[j].Y) - objects[i].Y) < 62) {
+                            if(objects[j].ThisObject != Objects.TANK)
+                                score++;
+                            objects[i].DeleteObject(i,objects);
+                            objects[j].DeleteObject(j,objects);
+                            i--;
+                            j--;
+                            break;
+                        }
+                }
+        }
+    }
+      
+        function loadImg(path) {
+            doPobrania++;
+            var v = new Image();
+            v.src = path;
+            v.addEventListener("load", function () { doPobrania--; }, false);
+            return v;
+        }
+        function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+       
+        function DrawScore() {
+            ctxMain.fillStyle = 'rgb(0,0,0)';
+            ctxMain.font = "bold 1.8em sans-serif";
+            if(!isMenu)
+                ctx.fillText("Score: " + score, 12, 40);
+            else
+                ctx.fillText("The Best Score: " + theBestScore, 12, 40);
+        }
+        function DrawGameWorld() {
+            ctx.clearRect(0, 0, width, height);
+            //Niebo
+            ctx.fillStyle = '#6495ED';
+            ctx.fillRect(0, 0, width, height);
+            //góry
+            ctx.drawImage(hills, 0, height - 401);
+            //pagórki
+            if(isMenu)
+                startButton.DrawButton();
+            //Ziemia
+            ctx.drawImage(ground, 0, height - 86);
+            sunPos += 1;
+            ctx.drawImage(sun, sunPos, 0);
+            ctx.drawImage(cloud1, 150, 50);
+            ctx.drawImage(cloud2, 300, 20);
+            ctx.drawImage(alien, 100, 200);
+
+            //Pociski
+            //Wyniki
+            //Prześlij bufor na element canvas
+            IsColision();
+            MoveObjects();
+            DrawObjects();
+            //DrawBullets();
+            //DrawAliens();
+            DrawScore();
+            ctx.drawImage(canvasBuffer, 0, 0);
+
+        }
+var intervalAliensId;
+        function checkLoad() {
+            if (doPobrania <= 0) {
+                
+                if(!isMenu)
+                    {
+                        mainTank =  menuTank;
+                        objects.push(mainTank);              
+                        intervalAliensId = setInterval(CreateAlien, 1000);
+                        canStart = false;
+                    }
+
+            }
+            else {
+                setTimeout(checkLoad, 100);
+            }
+        }
+        function CreateAlien() {
+            let tmp = new Alien(-70, 100 + Math.random() * 200, Math.random() * 10, 70, MovingObject.RIGHT, alien);
+            aliens.push(tmp);
+            objects.push(tmp);
+        }
+        function DrawAliens() {
+            for (var i = 0; i < aliens.length; i++) {
+                if (aliens[i].IsDirty == true || aliens[i].X > width) {
+                    aliens.splice(i, 1);
+                    i--;
+                }
+                //for (var i = 0; i < aliens.length; i++) {
+
+                //    // if(aliens[i].X -10 >= tankXTarget)
+                //    ctx.drawImage(alien, aliens[i].X, aliens[i].Y)
+                //}
+            }
+        }
+        function DrawObjects() {
+            for (let i = 0; i < objects.length; i++)
+            {
+                if((objects[i].X <= width + 100 && objects[i].X >= -100) &&(objects[i].Y <= height + 100 && objects[i].Y >= -100) )
+                    {
+                        ctx.drawImage(objects[i].Image, objects[i].X, objects[i].Y);
+                    }
+                else
+                {
+                    objects.splice(i,1);
+                    i--;
+                }
+            }
+        }
+        function MoveObjects() {
+            for (let i = 0; i < objects.length; i++) {
+                objects[i].MoveObject();
+            }
+        }
+        class Button
+        {
+           
+            Width = 100;Height = 200;BackgroundColor = 'white'; Text;TextColor = 'black';X = 0; Y = 0;ClickedButtonFnc;
+            ClickedButton(event)
+                { 
+                    const rect = canvas.getBoundingClientRect();
+                    const x = event.clientX - rect.left;
+                    const y = event.clientY - rect.top;
+                    if (this.isInsideButton(x, y))
+                    { 
+                        this.ClickedButtonFnc();
+                    } 
+                }
+            constructor(x,y,width,height,backgroundColor,textColor,text,clickedButtonFnc)
+            {
+                this.X = x;
+                this.Y = y;
+                this.Width = width;
+                this.Height = height;
+                this.BackgroundColor = backgroundColor;
+                this.TextColor = textColor;
+                this.Text = text;
+                this.ClickedButtonFnc = clickedButtonFnc;
+                document.addEventListener('click',this.ClickedButton.bind(this));
+            }
+            isInsideButton(x, y)
+            { 
+                return x > this.X && x < this.X + this.Width && y > this.Y && y < this.Y + this.Height;
+            }
+            DrawButton()
+            {
+                ctx.fillStyle = this.BackgroundColor; 
+                ctx.fillRect(this.X, this.Y, this.Width, this.Height); 
+                ctx.fillStyle = this.TextColor; ctx.font = '20px Arial'; 
+                ctx.fillText(this.Text, this.X + 10, this.Y + 30);
+            }
+
+        }
+        var bullets = Array();
+        class Objects {
+            static TANK = 'TANK';
+            static ALIEN = 'ALIEN';
+            static BULLET = 'BULLET';
+        }
+
+        class MovingObject {
+            static DOWN = 'DOWN';
+            static UP = 'UP';
+            static LEFT = 'LEFT';
+            static RIGHT = 'RIGHT';
+            static NONE = 'NONE';
+        }
+        class Object {
+            constructor(x, y, movingObject, image, thisObject, speed) {
+                this.X = x;
+                this.Y = y;
+                this.MovingObject = movingObject;
+                this.Image = image;
+                this.ThisObject = thisObject;
+                this.Speed = speed;
+                this.IsDirty = false;
+            }
+
+            MoveObject() {
+                if (this.MovingObject == MovingObject.RIGHT)
+                    this.X += this.Speed;
+                else if (this.MovingObject == MovingObject.LEFT)
+                    this.X += -this.Speed;
+                else if (this.MovingObject == MovingObject.DOWN)
+                    this.Y += this.Speed;
+                else if (this.MovingObject == MovingObject.UP)
+                    this.Y += -this.Speed;
+            }
+            //abstract method
+            DeleteObject(i,array)
+            {
+                 throw new Error('Method "makeSound()" must be implemented.');
+            }
+        }
+        class Bullet extends Object 
+        {
+            constructor(x, y, speed, movingObject, image, toShootObject)
+            {
+                super(x, y, movingObject, image, Objects.BULLET, speed);
+                this.ToShootObject = toShootObject;
+            }
+            DeleteObject(i,array)
+            {
+                array.splice(i,1);
+            }
+        }
+        class Tank extends Object 
+        {
+            MaxLives;
+            constructor(x, y, speed, image) 
+            {
+                super(x, y, MovingObject.NONE, image, Objects.TANK, speed);
+                this.MaxLives = 4;
+                this.lives = this.MaxLives;
+                this.BulletSpeed = 10;
+            }
+
+            Fire()
+            {
+                objects.push(new Bullet(this.X, this.Y, this.BulletSpeed, MovingObject.UP, bullet, Objects.ALIEN));
+            }
+
+            DeleteObject(i,array)
+            {
+                if(this.lives <= 0)
+                {
+                    array.splice(i,1);
+                isMenu = true;
+                clearInterval(intervalAliensId);
+                button.style.backgroundColor = 'red';
+                button.style.width = '300px';
+                if(score > theBestScore)
+                    theBestScore = score;
+                score = 0;
+                canStart = true;
+                while(objects.length != 0)
+                {
+                    objects[0].DeleteObject(0,objects);
+                }
+                this.lives = this.maxLives;
+                }
+                else
+                    this.lives--;
+              }
+        }
+        var aliens = Array();
+        var objects = Array();
+
+        class Alien extends Object
+        {
+           #IntervalId;
+           #chanceToshot;
+            constructor(x, y, speed, fireSpeed, movingObject, image) {
+                super(x, y, movingObject, image, Objects.ALIEN, speed);
+                this.FireSpeed = fireSpeed;
+                this.IntervalId = setInterval(this.MainFire.bind(this),100);
+                this.chanceToshot = Math.random() * (20 - 1) + 1;
+            }
+            MainFire()
+            {
+                let rand = Math.random() * 100;
+                if(rand <= 20)
+                 {
+                      objects.push(new Bullet(this.X, this.Y, Math.random() * (3 - 1) + 1,  MovingObject.DOWN, fire,Objects.TANK));
+                }
+            }
+            DeleteObject(i,array)
+            {
+                clearInterval(this.IntervalId);
+                array.splice(i,1);
+            }
+        }
+
+        class ThrowingAlien extends Alien
+        {
+            constructor(x, y, speed, fireSpeed, movingObject, image,badguySpeed) {
+                super(x, y, speed, fireSpeed, movingObject, image);
+                this.FireSpeed = fireSpeed;
+                this.BadguyRed = badguySpeed;
+            }
+            Fire() {
+                objects.push(new Bullet(this.X, this.Y, 10,  MovingObject.DOWN, fire,Objects.TANK));
+            }
+            ThrowAlien()
+            {
+                objects.push(new Bullet(this.X, this.Y, 10,  MovingObject.DOWN,badguyRed ,Objects.TANK));
+            }
+        }
+        // function CreateAlien()
+        // {
+        //     aliens.push(new Alien(-70,100 + Math.random() * 200,Math.random() * 10),70);
+        // }
+     
+        //Zmienne
+        var ctxMain = null;
+        var canvasBuffer;
+        var ctx = 0;
+        var width = 0;
+        var height = 0;
+        //liczba do pobrania elementów
+        var doPobrania = 0;
+        //elementy graficzne
+        var background, sky, mountains, hills, ground, tank, cloud1, cloud2, sun, bullet, tire, alien, fire,badguyRed ;
+        var isMenu = true;
+        var canStart = true;
+        var toButtonFnc = function () 
+        {
+            if(isMenu)
+            {
+                isMenu = !isMenu; 
+                checkLoad();
+            }
+        };
+        var startButton ;
+        //pozycje słońca
+        var sunPos = 0;
+        var score = 0;
+        var theBestScore = 0;
+        //var tankXPos = 0;
+        var tankXTarget;
+        var mainTank = new Tank(60, 644, 40,  tank);
+        var menuTank = new Tank(60, 644, 40,  tank);
+        var button;
+</script>
+<body>
+    <canvas id="gra" width="500" height="700">
+    <button id = "start" >
+    </button>
+    <script>
+        button = document.getElementById('start');
+        button.addEventListener('click',function(){
+            isMenu = false;
+            if(!isMenu && canStart)
+            checkLoad();
+            button.style.backgroundColor= 'transparent';
+            button.style.width = '0px';
+        })
+    </script>
+    </canvas>
+</body>
+</html>
