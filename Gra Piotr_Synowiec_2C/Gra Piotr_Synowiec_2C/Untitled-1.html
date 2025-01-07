@@ -24,7 +24,7 @@
         LoadResources();
         document.addEventListener("keydown", KeyDown, false);
         document.addEventListener("mousemove", Follow, false);
-        document.addEventListener("mousedown", Fire, false);
+        // document.addEventListener("mousedown", Fire, false);
     }, false);
 
     function Follow(e) {
@@ -32,11 +32,11 @@
     }
     function KeyDown(e) {
         if (e.keyCode == 37) {
-            mainTank.X -= 10;
+            mainTank.X -= mainTank.Speed;
             dir = 1;
         }
         else if (e.keyCode == 39) {
-            mainTank.X += 10;
+            mainTank.X += mainTank.Speed;
             dir = 1;
         }
         else if (e.keyCode == 32) {
@@ -133,6 +133,7 @@ var intervalAliensId;
                 if(!isMenu)
                     {
                         mainTank =  menuTank;
+                        mainTank.Image = tank;
                         objects.push(mainTank);              
                         intervalAliensId = setInterval(CreateAlien, 1000);
                         canStart = false;
@@ -278,7 +279,7 @@ var intervalAliensId;
             constructor(x, y, speed, image) 
             {
                 super(x, y, MovingObject.NONE, image, Objects.TANK, speed);
-                this.MaxLives = 4;
+                this.MaxLives = 1;
                 this.lives = this.MaxLives;
                 this.BulletSpeed = 10;
             }
@@ -290,9 +291,10 @@ var intervalAliensId;
 
             DeleteObject(i,array)
             {
+                this.lives--;
                 if(this.lives <= 0)
                 {
-                    array.splice(i,1);
+                array.splice(i,1);
                 isMenu = true;
                 clearInterval(intervalAliensId);
                 button.style.backgroundColor = 'red';
@@ -305,10 +307,8 @@ var intervalAliensId;
                 {
                     objects[0].DeleteObject(0,objects);
                 }
-                this.lives = this.maxLives;
+                this.lives = this.MaxLives;
                 }
-                else
-                    this.lives--;
               }
         }
         var aliens = Array();
@@ -386,7 +386,7 @@ var intervalAliensId;
         var theBestScore = 0;
         //var tankXPos = 0;
         var tankXTarget;
-        var mainTank = new Tank(60, 644, 40,  tank);
+        var mainTank = new Tank(60, 644, 40,tank);
         var menuTank = new Tank(60, 644, 40,  tank);
         var button;
 </script>
